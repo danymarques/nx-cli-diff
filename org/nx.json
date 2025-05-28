@@ -42,7 +42,7 @@
         }
       }
     },
-    "e2e-ci--**/*": {
+    "e2e-ci--**/**": {
       "dependsOn": ["^build"]
     },
     "@nx/angular:package": {
