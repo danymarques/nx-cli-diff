@@ -6,11 +6,9 @@
   "projectType": "library",
   "release": {
     "version": {
-      "generatorOptions": {
-        "packageRoot": "dist/{projectRoot}",
-        "currentVersionResolver": "git-tag",
-        "fallbackCurrentVersionResolver": "disk"
-      }
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
     }
   },
   "tags": [],

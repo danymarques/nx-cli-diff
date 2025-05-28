@@ -42,9 +42,6 @@
         }
       }
     },
-    "e2e-ci--**/**": {
-      "dependsOn": ["^build"]
-    },
     "@nx/angular:package": {
       "cache": true,
       "dependsOn": ["^build"],

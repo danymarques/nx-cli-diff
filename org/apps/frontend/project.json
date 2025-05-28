@@ -50,6 +50,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
+      "continuous": true,
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
@@ -60,6 +61,7 @@
         }
       },
       "defaultConfiguration": "development",
+      "dependsOn": ["backend:serve"],
       "options": {
         "proxyConfig": "apps/frontend/proxy.conf.json"
       }
@@ -81,6 +83,7 @@
       }
     },
     "serve-static": {
+      "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "frontend:build",
