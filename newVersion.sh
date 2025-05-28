@@ -67,16 +67,18 @@ NEWLINE/g' README.md && rm README.md.bak
   rebaseNeeded=true
   git checkout -b "${version}"
   rm -rf org
-  npx --yes create-nx-workspace@20.0.0 --name=org --preset=angular-monorepo --appName=frontend --bundler=esbuild --style=scss --no-ssr --e2eTestRunner=playwright --nxCloud=skip
+  npx --yes create-nx-workspace@"${version}" --name=org --preset=angular-monorepo --appName=frontend --bundler=esbuild --style=scss --no-ssr --e2eTestRunner=playwright --nxCloud=skip
+  cd org
   npx nx g @nx/angular:library --directory=libs/my-lib --publishable=true --importPath=@org/my-lib --no-interactive
   npx nx add @nx/nest
   npx nx g @nx/nest:app apps/backend --frontendProject frontend
+  cd ..
   git add org
   git commit -am "chore: version ${version}"
   diffStat=$(git --no-pager diff HEAD~ --shortstat)
   git push origin "${version}" -f
   git checkout main
-  diffUrl="[${lastVersion}...${version}](https://github.com/cexbrayat/angular-cli-diff/compare/${lastVersion}...${version})"
+  diffUrl="[${lastVersion}...${version}](https://github.com/danymarques/nx-cli-diff/compare/${lastVersion}...${version})"
   # insert a row in the version table of the README
   sed -i.bak "/^${version}|/ d" README.md && rm README.md.bak
   sed -i.bak 's/----|----|----/----|----|----\
