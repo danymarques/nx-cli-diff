@@ -8,10 +8,14 @@ module.exports = [
     rules: {
       '@nx/dependency-checks': [
         'error',
-        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+        {
+          ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
+        },
       ],
     },
-    languageOptions: { parser: require('jsonc-eslint-parser') },
+    languageOptions: {
+      parser: require('jsonc-eslint-parser'),
+    },
   },
   ...nx.configs['flat/angular'],
   ...nx.configs['flat/angular-template'],
