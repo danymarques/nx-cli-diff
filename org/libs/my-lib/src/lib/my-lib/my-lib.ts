@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'lib-my-lib',
   imports: [CommonModule],
-  templateUrl: './my-lib.component.html',
-  styleUrl: './my-lib.component.css',
+  templateUrl: './my-lib.html',
+  styleUrl: './my-lib.css',
 })
-export class MyLibComponent {}
+export class MyLib {}
